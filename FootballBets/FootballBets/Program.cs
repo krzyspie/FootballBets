@@ -1,4 +1,3 @@
-using FootballBets.Client.Pages;
 using FootballBets.Components;
 
 var builder = WebApplication.CreateBuilder(args);
