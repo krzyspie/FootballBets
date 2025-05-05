@@ -1,24 +1,46 @@
 ﻿@page "/bundesliga"
+@rendermode InteractiveServer
+
 <h3>Bundesliga</h3>
 <br />
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-6 col-sm-3 mb-2">
-      <button class="btn btn-primary w-100">Tabela</button>
+      <button class="btn btn-primary w-100" @onclick="OnTabelaClick">Tabela</button>
     </div>
     <div class="col-6 col-sm-3 mb-2">
-      <button class="btn btn-primary w-100">Mecze</button>
+      <button class="btn btn-primary w-100" @onclick="OnMeczeClick">Mecze</button>
     </div>
     <div class="col-6 col-sm-3 mb-2">
-      <button class="btn btn-primary w-100">Strzelcy</button>
+      <button class="btn btn-primary w-100" @onclick="OnStrzelcyClick">Strzelcy</button>
     </div>
     <div class="col-6 col-sm-3 mb-2">
-      <button class="btn btn-primary w-100">Typy</button>
+      <button class="btn btn-primary w-100" @onclick="OnTypyClick">Typy</button>
     </div>
   </div>
 </div>
-
+<p>Wybrano @mojTekst</p>
 @code {
+    private string mojTekst = "";
 
+    private void OnTabelaClick()
+    {
+        mojTekst = "Tabela";
+    }
+
+    private void OnMeczeClick()
+    {
+        mojTekst = "Mecze";
+    }
+
+    private void OnStrzelcyClick()
+    {
+        mojTekst = "Strzelcy";
+    }
+
+    private void OnTypyClick()
+    {
+        mojTekst = "Typy";
+    }
 }
