@@ -92,6 +92,7 @@
 
 </table>
 
+<div class="flex-container justify-content-center">
 <table class="table table-striped table-bordered table-hover" style="display: @strzelcyDisplay;">
     <caption>Strzelcy</caption>
     <thead class="table-dark">
@@ -135,6 +136,7 @@
         </tr>
     </tbody>
 </table>
+</div>
 @code {
     private string mojTekst = "";
     private string tabelaDisplay = "none;";
@@ -143,7 +145,7 @@
     private void OnTabelaClick()
     {
         mojTekst = "Tabela";
-        tabelaDisplay = "block;";
+        tabelaDisplay = "flex;";
         strzelcyDisplay = "none;";
     }
 
@@ -158,7 +160,7 @@
     {
         mojTekst = "Strzelcy";
         tabelaDisplay = "none;";
-        strzelcyDisplay = "block;";
+        strzelcyDisplay = "flex;";
     }
 
     private void OnTypyClick()
