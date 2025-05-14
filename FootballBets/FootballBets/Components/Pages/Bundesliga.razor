@@ -143,16 +143,56 @@
     </div>
 }
 
+@if(meczeDisplay)
+{
+    <div class="d-flex justify-content-center">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr class="text-center">
+                    <th>Data</th>
+                    <th>Gospodarze</th>
+                    <th>Wynik</th>
+                    <th>Goście</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2023-08-20</td>
+                    <td>Bayern Monachium</td>
+                    <td>3:1</td>
+                    <td>Borussia Dortmund</td>
+                </tr>
+                <tr>
+                    <td>2023-08-21</td>
+                    <td>RB Lipsk</td>
+                    <td>2:2</td>
+                    <td>Eintracht Frankfurt</td>
+                </tr>
+                <tr>
+                    <td>2023-08-22</td>
+                    <td>Bayer Leverkusen</td>
+                    <td>1:0</td>
+                    <td>VfL Wolfsburg</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+}
+
 @code {
     private string mojTekst = "";
     private bool tabelaDisplay = false;
     private bool strzelcyDisplay = false;
+    private bool meczeDisplay = false;
+    private bool typyDisplay = false;
 
     private void OnTabelaClick()
     {
         mojTekst = "Tabela";
         tabelaDisplay = true;
         strzelcyDisplay = false;
+        meczeDisplay = false;
+        typyDisplay = false;
     }
 
     private void OnMeczeClick()
@@ -160,6 +200,8 @@
         mojTekst = "Mecze";
         tabelaDisplay = false;
         strzelcyDisplay = false;
+        meczeDisplay = true;
+        typyDisplay = false;
     }
 
     private void OnStrzelcyClick()
@@ -167,6 +209,8 @@
         mojTekst = "Strzelcy";
         tabelaDisplay = false;
         strzelcyDisplay = true;
+        meczeDisplay = false;
+        typyDisplay = false;
     }
 
     private void OnTypyClick()
@@ -174,5 +218,7 @@
         mojTekst = "Typy";
         tabelaDisplay = false;
         strzelcyDisplay = false;
+        meczeDisplay = false;
+        typyDisplay = true;
     }
 }
